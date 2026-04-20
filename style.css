@@ -1,70 +1,167 @@
-/* Reset básico */
+/* Variables de color para mantener consistencia */
+:root {
+    --primary-color: #2b7a78;
+    --secondary-color: #3aafa9;
+    --text-dark: #17252a;
+    --text-light: #feffff;
+    --bg-light: #def2f1;
+}
+
+/* Reseteo básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Body */
-body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #c3ec52, #0ba360);
-    color: #fff;
+}
+
+body {
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- ENCABEZADO --- */
+.header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Contenedor */
-.container {
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--bg-light);
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero {
+    background: linear-gradient(rgba(43, 122, 120, 0.8), rgba(43, 122, 120, 0.8)), url('https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1920&q=80') center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    color: var(--text-light);
+    padding: 0 20px;
 }
 
-/* Header */
-header h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-header p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Main */
-main p {
-    margin: 20px 0;
-    font-size: 1.2em;
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s;
 }
 
-.icon {
-    width: 80px;
-    margin-bottom: 20px;
+.btn:hover {
+    background-color: #248b86;
 }
 
-button {
-    padding: 12px 25px;
-    font-size: 1em;
-    background-color: #ffbb33;
-    color: #333;
-    border: none;
+/* --- SERVICIOS --- */
+.services {
+    padding: 5rem 5%;
+    text-align: center;
+    background-color: var(--bg-light);
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--text-light);
+    padding: 2rem;
     border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-button:hover {
-    background-color: #ffdd66;
+.card:hover {
+    transform: translateY(-10px);
 }
 
-/* Footer */
-footer {
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #eee;
+.card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* --- PIE DE PÁGINA --- */
+.footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 5%;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* --- RESPONSIVIDAD (MÓVILES) --- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
 }
