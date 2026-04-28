@@ -3,68 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Veterinaria Amigos</title>
+    <title>Cuestionario con Temporizador</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">
-            <h1>🐾 VetAmigos</h1>
+    <main class="contenedor">
+        <div class="temporizador">
+            Tiempo restante: <span id="tiempo">30</span>s
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h2>Cuidamos a tu mejor amigo con amor y profesionalismo</h2>
-            <p>Atención médica integral, emergencias 24/7 y la mejor tecnología para el bienestar de tus mascotas.</p>
-            <a href="#contacto" class="btn">Reserva una cita</a>
+        <div id="area-quiz">
+            <h2 id="pregunta">Cargando pregunta...</h2>
+            <div id="opciones" class="botones-opciones">
+                </div>
         </div>
-    </section>
 
-    <section id="servicios" class="services">
-        <h2>Nuestros Servicios</h2>
-        <div class="grid-services">
-            <div class="card">
-                <h3>🩺 Consulta General</h3>
-                <p>Chequeos preventivos y diagnósticos precisos para mantener a tu mascota sana y feliz.</p>
-            </div>
-            <div class="card">
-                <h3>💉 Vacunación</h3>
-                <p>Esquemas de vacunación completos y desparasitación interna y externa.</p>
-            </div>
-            <div class="card">
-                <h3>✂️ Peluquería</h3>
-                <p>Baños medicados, cortes de raza y spa para que tu mascota luzca increíble.</p>
-            </div>
-            <div class="card">
-                <h3>🚑 Emergencias 24/7</h3>
-                <p>Atención médica inmediata y cirugías de urgencia a cualquier hora del día.</p>
-            </div>
+        <div id="area-resultado" style="display: none;">
+            <h2>¡Tiempo agotado o completado!</h2>
+            <p>Tu puntuación es: <span id="puntuacion">0</span> de 6</p>
+            <button id="btn-reiniciar" class="btn">Volver a jugar</button>
         </div>
-    </section>
+    </main>
 
-    <footer id="contacto" class="footer">
-        <div class="footer-info">
-            <h3>Contáctanos</h3>
-            <p>📍 Santa Cruz de la Sierra, Bolivia</p>
-            <p>📞 +591 7000-0000</p>
-            <p>✉️ emergencias@vetamigos.com</p>
-        </div>
-        <div class="footer-hours">
-            <h3>Horarios de Atención</h3>
-            <p>Lunes a Sábado: 08:00 - 20:00</p>
-            <p>Domingos y Feriados: Solo emergencias</p>
-        </div>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
